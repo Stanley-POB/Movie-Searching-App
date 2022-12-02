@@ -1,0 +1,24 @@
+.searchContainer {
+    margin-right: 2%;
+  }
+  
+  .searchBar {
+    height: 4vh;
+    width: 20vw;
+    border-radius: 24px;
+    margin-right: 5px;
+    border: none;
+    padding: 10px;
+  
+  }
+  .searchButton {
+    height: 4vh;
+    width: 5vw;
+    border-radius: 24px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .searchButton:hover{
+    background-color: #FFFFFF;
+  }
