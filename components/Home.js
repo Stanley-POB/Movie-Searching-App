@@ -48,7 +48,6 @@ export default function Home() {
           return { title, poster, voteAverage, voteCount, overview };
         });
         setMoviesData(moviesData);
-        dispatch(addMovieToStore(moviesData));
       });
   }, []);
 
@@ -88,7 +87,7 @@ export default function Home() {
       setPopoverInfo([...popoverInfo, movieInfo]);
     }
     setPopoverVisible(true);
-    console.log(true);
+    dispatch(addMovieToStore(movieInfo));
   };
 
   const movies = moviesData.map((data, i) => {
@@ -117,9 +116,7 @@ export default function Home() {
         </div>
         <SearchBox handleSearch={handleSearch} />
       </header>
-      <div className={styles.popover}>
-        {popoverVisible && <Popover moviesData={moviesData} />}
-      </div>
+      <div className={styles.popover}>{popoverVisible && <Popover />}</div>
       <main className={styles.main}>
         <div className={styles.movieContainer}>{movies}</div>
       </main>

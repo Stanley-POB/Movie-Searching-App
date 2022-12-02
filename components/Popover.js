@@ -3,14 +3,11 @@ import styles from "../styles/Popover.module.css";
 import Movie from "./Movie";
 import { useSelector } from "react-redux";
 
-function Popover() {
+function Popover(props) {
   const movies = useSelector((state) => state.movies.value);
-  console.log("store selector:", movies);
-  const movie = movies.map((data, i) => {
-    console.log(data);
+  const movie = movies.map((data) => {
     return (
       <Movie
-        key={0}
         title={data.title}
         poster={data.poster}
         voteAverage={data.voteAverage}
@@ -19,7 +16,14 @@ function Popover() {
       />
     );
   });
-  return <div className={styles.container}>{movie}</div>;
+  return (
+    <div className={styles.container}>
+      <div className={styles.closeButton}>
+        <button>X</button>
+      </div>
+      {movie}
+    </div>
+  );
 }
 
 export default Popover;

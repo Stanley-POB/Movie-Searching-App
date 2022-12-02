@@ -36,7 +36,6 @@ export default function Movie(props) {
   // Popover click
   const handleClickPopover = () => {
     props.handlePopoverInfo(props);
-    console.log("it works");
   };
 
   // Personal note
